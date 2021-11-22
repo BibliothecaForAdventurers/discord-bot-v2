@@ -1,0 +1,290 @@
+[
+  {
+      "Trait": "Ethereal Silica",
+      "Value": 162
+  },
+  {
+      "Trait": "Wood",
+      "Value": 5015
+  },
+  {
+      "Trait": "Coal",
+      "Value": 3833
+  },
+  {
+      "Trait": "Stone",
+      "Value": 3941
+  },
+  {
+      "Trait": "Obsidian",
+      "Value": 2216
+  },
+  {
+      "Trait": "Gold",
+      "Value": 914
+  },
+  {
+      "Trait": "Silver",
+      "Value": 1741
+  },
+  {
+      "Trait": "Ruby",
+      "Value": 239
+  },
+  {
+      "Trait": "Sapphire",
+      "Value": 247
+  },
+  {
+      "Trait": "Adamantine",
+      "Value": 55
+  },
+  {
+      "Trait": "Mithral",
+      "Value": 37
+  },
+  {
+      "Trait": "Cold Iron",
+      "Value": 957
+  },
+  {
+      "Trait": "Diamonds",
+      "Value": 300
+  },
+  {
+      "Trait": "Copper",
+      "Value": 2643
+  },
+  {
+      "Trait": "Ironwood",
+      "Value": 1179
+  },
+  {
+      "Trait": "Twilight Quartz",
+      "Value": 111
+  },
+  {
+      "Trait": "Hartwood",
+      "Value": 594
+  },
+  {
+      "Trait": "Ignium",
+      "Value": 172
+  },
+  {
+      "Trait": "True Ice",
+      "Value": 139
+  },
+  {
+      "Trait": "Alchemical Silver",
+      "Value": 93
+  },
+  {
+      "Trait": "Deep Crystal",
+      "Value": 239
+  },
+  {
+      "Trait": "Dragonhide",
+      "Value": 23
+  },
+  {
+      "Trait": "Cathedral Of Agony",
+      "Value": 1
+  },
+  {
+      "Trait": "Sanctum Of Purpose",
+      "Value": 1
+  },
+  {
+      "Trait": "The Ancestral Willow",
+      "Value": 1
+  },
+  {
+      "Trait": "The Crying Oak",
+      "Value": 1
+  },
+  {
+      "Trait": "The Immortal Hot Spring",
+      "Value": 1
+  },
+  {
+      "Trait": "Pantheon Of Chaos",
+      "Value": 1
+  },
+  {
+      "Trait": "The Solemn Catacombs",
+      "Value": 1
+  },
+  {
+      "Trait": "The Exalted Geyser",
+      "Value": 1
+  },
+  {
+      "Trait": "The Devout Summit",
+      "Value": 1
+  },
+  {
+      "Trait": "The Mother Grove",
+      "Value": 1
+  },
+  {
+      "Trait": "Synagogue Of Collapse",
+      "Value": 1
+  },
+  {
+      "Trait": "Sanctuary Of The Ancients",
+      "Value": 1
+  },
+  {
+      "Trait": "The Weeping Willow",
+      "Value": 1
+  },
+  {
+      "Trait": "The Exalted Maple",
+      "Value": 1
+  },
+  {
+      "Trait": "Altar Of The Void",
+      "Value": 1
+  },
+  {
+      "Trait": "The Pure Stone",
+      "Value": 1
+  },
+  {
+      "Trait": "The Celestial Vertex",
+      "Value": 1
+  },
+  {
+      "Trait": "The Eternal Orchard",
+      "Value": 1
+  },
+  {
+      "Trait": "The Amaranthine Rock",
+      "Value": 1
+  },
+  {
+      "Trait": "The Pearl Summit",
+      "Value": 1
+  },
+  {
+      "Trait": "Mosque Of Mercy",
+      "Value": 1
+  },
+  {
+      "Trait": "The Mirror Grotto",
+      "Value": 1
+  },
+  {
+      "Trait": "The Glowing Geyser",
+      "Value": 1
+  },
+  {
+      "Trait": "Altar Of Perfection",
+      "Value": 1
+  },
+  {
+      "Trait": "The Cerulean Chamber",
+      "Value": 1
+  },
+  {
+      "Trait": "The Mythic Trees",
+      "Value": 1
+  },
+  {
+      "Trait": "The Perpetual Ridge",
+      "Value": 1
+  },
+  {
+      "Trait": "The Fading Yew",
+      "Value": 1
+  },
+  {
+      "Trait": "The Origin Oasis",
+      "Value": 1
+  },
+  {
+      "Trait": "The Sanctified Fjord",
+      "Value": 1
+  },
+  {
+      "Trait": "The Pale Pillar",
+      "Value": 1
+  },
+  {
+      "Trait": "Sanctum Of The Oracle",
+      "Value": 1
+  },
+  {
+      "Trait": "The Ethereal Isle",
+      "Value": 1
+  },
+  {
+      "Trait": "The Omen Graves",
+      "Value": 1
+  },
+  {
+      "Trait": "The Pale Vertex",
+      "Value": 1
+  },
+  {
+      "Trait": "The Glowing Pinnacle",
+      "Value": 1
+  },
+  {
+      "Trait": "The Azure Lake",
+      "Value": 1
+  },
+  {
+      "Trait": "The Argent Catacombs",
+      "Value": 1
+  },
+  {
+      "Trait": "The Dark Mountain",
+      "Value": 1
+  },
+  {
+      "Trait": "Sky Mast",
+      "Value": 1
+  },
+  {
+      "Trait": "Infinity Spire",
+      "Value": 1
+  },
+  {
+      "Trait": "The Exalted Basin",
+      "Value": 1
+  },
+  {
+      "Trait": "The Ancestral Trees",
+      "Value": 1
+  },
+  {
+      "Trait": "The Perpetual Fjord",
+      "Value": 1
+  },
+  {
+      "Trait": "The Ancient Lagoon",
+      "Value": 1
+  },
+  {
+      "Trait": "The Pearl River",
+      "Value": 1
+  },
+  {
+      "Trait": "The Cerulean Reliquary",
+      "Value": 1
+  },
+  {
+      "Trait": "Altar Of Divine Will",
+      "Value": 1
+  },
+  {
+      "Trait": "Pagoda Of Fortune",
+      "Value": 1
+  },
+  {
+      "Trait": "The Oracle Pool",
+      "Value": 1
+  }
+]

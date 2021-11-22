@@ -1,6 +1,7 @@
 const fetch = require('node-fetch');
 const Discord = require('discord.js');
-const { openseaEventsUrl } = require('../config.json');
+const { openseaAssetUrl, openseaEventsUrl } = require('../config.json');
+const checkRealmRarity = require('../useRarity');
 
 var salesCache = [];
 var lastTimestamp = null;
@@ -42,7 +43,7 @@ module.exports = {
           break;
         }
 
-        data.asset_events.forEach(function(event) {
+        data.asset_events.forEach(async function(event) {
           if (event.asset) {
             if (salesCache.includes(event.id)) {
               return;
@@ -59,6 +60,40 @@ module.exports = {
               .setThumbnail(event.asset.image_url)
               .addField("From", `[${event.seller.user?.username || event.seller.address.slice(0,8)}](https://etherscan.io/address/${event.seller.address})`, true)
               .addField("To", `[${event.winner_account.user?.username || event.winner_account.address.slice(0,8)}](https://etherscan.io/address/${event.winner_account.address})`, true);
+
+
+              let openSeaResponseUrl = `${openseaAssetUrl}/${process.env.CONTRACT_ADDRESS}/${event.asset.token_id}`;
+
+              try {
+                var res = await fetch(openSeaResponseUrl, settings);
+                if (res.status != 200) {
+                  throw new Error(`Couldn't retrieve events: ${res.statusText}`);
+                }
+  
+                let data = await res.json();
+                console.log(data)
+  
+                const rarity = checkRealmRarity(data.traits).toFixed(2)
+  
+                const resources = data.traits.filter(resource => resource.trait_type === 'Resource').map(a => a.value);
+  
+                const cities = data.traits.find(resource => resource.trait_type === 'Cities')
+                const harbors = data.traits.find(resource => resource.trait_type === 'Harbors')
+                const regions = data.traits.find(resource => resource.trait_type === 'Regions')
+                const rivers = data.traits.find(resource => resource.trait_type === 'Rivers')
+                const order = data.traits.find(resource => resource.trait_type === 'Order')
+                const wonder = data.traits.find(resource => resource.trait_type === 'Wonder (translated)')
+  
+                embedMsg.addField('Order', order.value, true)
+                embedMsg.addField('Rarity', rarity, true)
+                embedMsg.addField('Resources', resources, true)
+                embedMsg.addField('Traits', `Cities ${cities.value}/21\n Regions ${regions.value}/7\n Harbors ${harbors.value}/35\n Rivers ${rivers.value}/60\n`, true)
+                if (wonder) {
+                  embedMsg.addField('Wonder', wonder.value, true)
+                }
+              } catch (e) {
+                console.log(e)
+              }
 
             client.channels.fetch(process.env.DISCORD_SALES_CHANNEL_ID)
               .then(channel => {
