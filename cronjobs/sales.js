@@ -39,7 +39,7 @@ module.exports = {
 
         next = data.next;
 
-        data.asset_events.forEach(function (event) {
+        data.asset_events.forEach(async function (event) {
           if (event.asset) {
             if (salesCache.includes(event.id)) {
               newEvents = false;
