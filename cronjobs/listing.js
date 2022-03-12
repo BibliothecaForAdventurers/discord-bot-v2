@@ -22,15 +22,17 @@ module.exports = {
     // doing this to try to resolve some intermittent issues with events being missed by the bot, suspect it's due to OpenSea api being slow to update the events data
     // duplicate events are filtered out by the listingCache array
 
-    let offset = 0;
+    let next = null;
+    let newEvents = true;
     let settings = {
       method: "GET",
       headers: process.env.OPEN_SEA_API_KEY == null ? {} : {
         "X-API-KEY": process.env.OPEN_SEA_API_KEY
       }
     };
-    while (1) {
-      let url = `${openseaEventsUrl}?collection_slug=${process.env.OPEN_SEA_COLLECTION_NAME}&event_type=created&only_opensea=false&offset=${offset}&limit=50&occurred_after=${lastTimestamp}&occurred_before=${newTimestamp}`;
+
+    do {
+      let url = `${openseaEventsUrl}?collection_slug=${process.env.OPEN_SEA_COLLECTION_NAME}&event_type=created&only_opensea=false&occurred_before=${newTimestamp}${next == null ? '' : `&cursor=${next}`}`;
       try {
         var res = await fetch(url, settings);
         if (res.status != 200) {
@@ -38,19 +40,23 @@ module.exports = {
         }
 
         let data = await res.json();
-        if (data.asset_events.length == 0) {
-          break;
-        }
 
-        data.asset_events.forEach(async function (event) {
+        next = data.next;
+
+        data.asset_events.forEach(function (event) {
           if (event.asset) {
             if (listingCache.includes(event.id)) {
+              newEvents = false;
               return;
             } else {
               listingCache.push(event.id);
               if (listingCache.length > 200) listingCache.shift();
             }
 
+            if ((+new Date(event.created_date) / 1000) < lastTimestamp) {
+              newEvents = false;
+              return;
+            }
 
             const embedMsg = new Discord.MessageEmbed()
               .setColor('#0099ff')
@@ -99,14 +105,12 @@ module.exports = {
               .catch(console.error);
           }
         });
-
-        offset += data.asset_events.length;
       }
       catch (error) {
         console.error(error);
         return;
       }
-    }
+    } while (next != null && newEvents)
 
     lastTimestamp = newTimestamp;
   }
